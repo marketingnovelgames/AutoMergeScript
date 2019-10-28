@@ -16,9 +16,7 @@ Rugged::Repository.clone_at("https://github.com/marketingnovelgames/Arita.git", 
 dir = Dir.glob("repo/browser_*")
 
 match = dir.map {|d|
-    if d =~ /#{Date.today.to_s.gsub(/-/, '')}/
-        d.sub(/repo\/browser_/, '').sub(/_/, '').to_i
-    end
+  d.sub(/repo\/browser_/, '').sub(/_/, '').to_i
 }.compact
 
 new_data_path = match.max.to_s
